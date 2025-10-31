@@ -89,10 +89,11 @@ SELECT DISTINCT T1.employee_number
 FROM assigned_to T1
 JOIN project T2 ON T1.p_no = T2.p_no
 WHERE T2.p_loc IN ('Bengaluru', 'Hyderabad', 'Mysuru');
-SELECT E.EMPNO
-FROM EMPLOYEE E
-LEFT JOIN INCENTIVES I ON E.EMPNO = I.EMPNO
-WHERE I.EMPNO IS NULL;
+
+SELECT E.employee_number
+FROM employee E
+LEFT JOIN incentives I ON E.employee = I.employee
+WHERE I.employee IS NULL;
 
 SELECT
     E.employee_name,
